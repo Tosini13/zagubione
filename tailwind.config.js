@@ -19,6 +19,12 @@ module.exports = {
           on: "#000",
         },
       },
+      height: {
+        header: "80px",
+      },
+      minHeight: {
+        "section-minus-header": "calc(100vh - 80px)",
+      },
     },
   },
   plugins: [],
