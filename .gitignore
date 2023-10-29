@@ -8,6 +8,9 @@
 # testing
 /coverage
 
+# db
+/pocketbase/pb_data
+
 # production
 /build
 
