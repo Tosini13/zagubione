@@ -9,13 +9,13 @@ type InputProps = InputHTMLAttributes<HTMLInputElement> & {
 const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ icon, className, inputClassName, ...rest }: InputProps, ref) => {
     return (
-      <div className={twMerge("flex items-center", className)}>
+      <div className={twMerge("flex items-center rounded-lg", className)}>
         {icon}
         <input
           ref={ref}
           {...rest}
           className={twMerge(
-            "w-full px-2 py-2 focus:outline-none",
+            "w-full px-2 py-2 focus:outline-none !bg-transparent",
             inputClassName
           )}
         />
