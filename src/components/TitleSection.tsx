@@ -20,7 +20,7 @@ const TitleSection: React.FC<TitleSectionPropsType> = ({}) => {
         Jeśli zgubiłeś swoją własność lub znalazłeś czyjąś, wypełnij super
         krótki formularz, aby ogłosić to na naszej tablicy.
       </p>
-      <Button iconSrc={getIconSrc("arrow-left.svg")} className="mx-auto">
+      <Button icon={getIconSrc("arrow-left.svg")} className="mx-auto">
         Zgłoś już teraz
       </Button>
       <img
