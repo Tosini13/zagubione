@@ -52,3 +52,7 @@ select:-webkit-autofill:focus {
 .button-variant{
   @apply text-primary-variant hover:bg-primary-variant hover:text-primary-variant-on bg-blue-100;
 }
+
+.horizontal-layout{
+  @apply max-w-7xl xl:mx-auto mx-2
+}
