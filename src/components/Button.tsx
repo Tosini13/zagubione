@@ -22,7 +22,8 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       className={twMerge(
-        "flex items-center justify-center gap-x-2 rounded-xl font-bold bg-primary-variant text-primary-variant-on hover:brightness-110 py-4 px-8 transition-all",
+        "flex items-center justify-center gap-x-2 rounded-xl font-bold bg-primary-variant text-primary-variant-on active:brightness-100 hover:brightness-110 py-4 px-8 transition-all",
+        !children && "px-4",
         className
       )}
       {...rest}
@@ -37,7 +38,7 @@ const Button: React.FC<ButtonProps> = ({
       ) : React.isValidElement(icon) ? (
         icon
       ) : null}
-      <span>{children}</span>
+      {children && <span>{children}</span>}
     </button>
   );
 };
