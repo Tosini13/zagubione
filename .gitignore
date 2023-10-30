@@ -10,6 +10,7 @@
 
 # db
 /pocketbase/pb_data
+/pocketbase/pb_migrations
 
 # env
 /.env
