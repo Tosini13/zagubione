@@ -1,12 +1,5 @@
-import {
-  FC,
-  ReactNode,
-  createContext,
-  useContext,
-  useMemo,
-  useState,
-} from "react";
-import PocketBase, { RecordAuthResponse, RecordModel } from "pocketbase";
+import { ReactNode, createContext, useContext, useMemo, useState } from "react";
+import { useDbContext } from "./db.context";
 
 type AuthContextType = {
   signIn: (email: string, password: string) => Promise<void>;
@@ -23,27 +16,26 @@ type AuthContextProviderPropsType = {
 const AuthContextProvider: React.FC<AuthContextProviderPropsType> = ({
   children,
 }) => {
+  const { db } = useDbContext();
   const [token, setToken] = useState<string | null>(null);
 
-  const pb = useMemo(() => {
-    const authRefresh = async (pb: PocketBase) => {
-      const authData = await pb.collection("users").authRefresh();
-      setToken(authData.token);
+  useMemo(() => {
+    const authRefresh = async () => {
+      if (!db) return;
+      try {
+        const authData = await db.collection("users").authRefresh();
+        setToken(authData.token);
+      } catch (e) {
+        console.log("e !log!", e);
+      }
     };
 
-    const DB_URL = process.env.REACT_APP_POCKET_BASE_SERVER_URL;
-    if (!DB_URL) {
-      throw new Error(`Database URL was not provided: ${DB_URL}`);
-    }
-
-    const pb = new PocketBase(DB_URL);
-    authRefresh(pb);
-    return pb;
-  }, []);
+    authRefresh();
+  }, [db]);
 
   const signIn = async (email: string, password: string) => {
     try {
-      const res = await pb
+      const res = await db
         .collection("users")
         .authWithPassword(email, password);
 
@@ -58,7 +50,7 @@ const AuthContextProvider: React.FC<AuthContextProviderPropsType> = ({
     <AuthContext.Provider
       value={{
         signIn,
-        signOut: () => pb.authStore.clear(),
+        signOut: () => db.authStore.clear(),
         token,
       }}
     >

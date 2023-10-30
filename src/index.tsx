@@ -15,6 +15,7 @@ import Home from "./pages/Home";
 import Root from "./pages/Root";
 import AuthContextProvider from "./stores/auth.context";
 import Error from "./pages/Error";
+import DbContextProvider from "./stores/db.context";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,9 +31,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <AuthContextProvider>
-      <RouterProvider router={router} />
-    </AuthContextProvider>
+    <DbContextProvider>
+      <AuthContextProvider>
+        <RouterProvider router={router} />
+      </AuthContextProvider>
+    </DbContextProvider>
   </React.StrictMode>
 );
 
