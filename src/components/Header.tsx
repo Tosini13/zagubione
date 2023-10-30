@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import { getIconSrc } from "../utils";
+import { useAuthContext } from "../stores/auth.context";
 
 export default function Header() {
+  const { token } = useAuthContext();
+
   return (
     <nav className="justify-between items-start flex max-md:flex-wrap py-4 max-w-screen-xl mx-auto h-header">
       <div className="items-center text-base flex gap-10 my-auto px-5 max-md:flex-wrap">
@@ -30,15 +33,21 @@ export default function Header() {
         </div>
       </div>
       <div className="items-center self-stretch flex gap-5">
-        <div className="items-start flex gap-2 max-md:justify-center">
+        {token ? (
           <Link to="/login" className="link">
-            Log In
+            Log Out
           </Link>
-          <span className="text-base"> / </span>
-          <Link to="/sign-up" className="link">
-            Sign Up
-          </Link>
-        </div>
+        ) : (
+          <div className="items-start flex gap-2 max-md:justify-center">
+            <Link to="/login" className="link">
+              Log In
+            </Link>
+            <span className="text-base"> / </span>
+            <Link to="/sign-up" className="link">
+              Sign Up
+            </Link>
+          </div>
+        )}
         <button className="button button-variant">Zgłoś</button>
       </div>
     </nav>

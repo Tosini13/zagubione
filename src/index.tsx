@@ -13,6 +13,7 @@ import {
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Root from "./pages/Root";
+import AuthContextProvider from "./stores/auth.context";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,7 +29,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthContextProvider>
+      <RouterProvider router={router} />
+    </AuthContextProvider>
   </React.StrictMode>
 );
 

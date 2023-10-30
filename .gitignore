@@ -11,6 +11,9 @@
 # db
 /pocketbase/pb_data
 
+# env
+/.env
+
 # production
 /build
 
