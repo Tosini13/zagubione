@@ -1,3 +1,4 @@
+import HowItWorks from "../components/HowItWorks";
 import PostsDrop from "../components/PostsDrop";
 import TitleSection from "../components/TitleSection";
 import { stuffType } from "../constants";
@@ -34,14 +35,21 @@ type HomePropsType = {};
 
 const Home: React.FC<HomePropsType> = ({}) => {
   return (
-    <div data-testid="home" className="horizontal-layout py-16 space-y-8">
+    <div data-testid="home" className="py-16">
       <TitleSection />
-      <FoundContextProvider>
-        <FoundDrops />
-      </FoundContextProvider>
-      <LostContextProvider>
-        <LostDrops />
-      </LostContextProvider>
+      <div className="horizontal-layout py-16">
+        <FoundContextProvider>
+          <FoundDrops />
+        </FoundContextProvider>
+        <LostContextProvider>
+          <LostDrops />
+        </LostContextProvider>
+      </div>
+      <div className="bg-primary-variant/10">
+        <div className="horizontal-layout py-16">
+          <HowItWorks />
+        </div>
+      </div>
     </div>
   );
 };
