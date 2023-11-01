@@ -12,7 +12,7 @@ const Error: React.FC = () => {
       <div className="text-center space-y-4">
         <h1 className="text-3xl font-bold">Oops!</h1>
         <p className="text-lg">Sorry, an unexpected error has occurred.</p>
-        <Link className="link mt-4 block" to={"/"}>
+        <Link className="link mt-4 block mx-auto" to={"/"}>
           Go to Homepage
         </Link>
       </div>
