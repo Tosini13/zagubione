@@ -6,7 +6,7 @@ import BusinessFooter from "../components/BusinessFooter";
 function Root() {
   return (
     <>
-      <header className="sticky w-full">
+      <header className="sticky w-full top-0 z-50 bg-white/95 shadow-sm">
         <Header />
       </header>
       <Outlet />
