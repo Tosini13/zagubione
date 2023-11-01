@@ -26,7 +26,7 @@ const ArrowsNavigation: React.FC<ArrowsNavigationPropsType> = ({
   console.log("swiper !log!", swiper);
 
   return (
-    <div className="flex items-center justify-between max-w-fit mx-auto gap-x-6">
+    <div className="flex items-center justify-between max-w-fit mx-auto gap-x-8">
       <Button
         className="group cursor-pointer bg-transparent rounded-full border-2 border-black hover:border-primary-variant"
         icon={

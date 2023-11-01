@@ -23,11 +23,11 @@ const SLIDER_BREAK_POINTS = {
     centeredSlides: true,
   },
   640: {
-    slidesPerView: 2,
+    slidesPerView: 2.1,
     centeredSlides: false,
   },
   1024: {
-    slidesPerView: 3.3,
+    slidesPerView: 4.1,
     centeredSlides: false,
   },
 };
@@ -44,7 +44,7 @@ const Reviews: React.FC<ReviewsModulePropsType> = ({ reviews }) => {
   const [activeIndex, setActiveSlide] = useState(0);
 
   return (
-    <div data-testid="reviews" className="space-y-10">
+    <div data-testid="reviews" className="space-y-14">
       <h1 className="text-3xl font-bold text-center">
         <span className="text-primary-variant">Opinie</span> naszych uytkowników
       </h1>
@@ -69,7 +69,7 @@ const Reviews: React.FC<ReviewsModulePropsType> = ({ reviews }) => {
           {reviews.map((review, index) => (
             <SwiperSlide
               key={index}
-              className="!h-auto w-20 max-w-full p-6 border border-secondary-label/20 rounded-lg"
+              className="!h-auto max-w-full p-6 border border-secondary-label/20 rounded-lg"
             >
               <div className="text-slate-800 text-sm font-semibold leading-6">
                 {review.name}
@@ -79,7 +79,7 @@ const Reviews: React.FC<ReviewsModulePropsType> = ({ reviews }) => {
               </div>
             </SwiperSlide>
           ))}
-          <div className="mt-6">
+          <div className="mt-10">
             <ArrowsNavigation
               activeIndex={activeIndex}
               firstSlide={isFirstSlide}
