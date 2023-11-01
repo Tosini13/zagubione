@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { getIconSrc } from "../utils";
 import { useAuthContext } from "../stores/auth.context";
+import Button from "./Button";
 
 export default function Header() {
   const { token } = useAuthContext();
@@ -48,7 +49,9 @@ export default function Header() {
             </Link>
           </div>
         )}
-        <button className="button button-variant">Zgłoś</button>
+        <Button variant="secondary" size="medium">
+          Zgłoś
+        </Button>
       </div>
     </nav>
   );

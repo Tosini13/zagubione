@@ -75,8 +75,9 @@ const HowItWorks: React.FC<HowItWorksPropsType> = ({}) => {
         />
       </div>
       <Button
+        variant="secondary"
+        className="mx-auto border-primary-variant border"
         icon={<ArrowLeftIcon className="h-6 aspect-square" />}
-        className="button-variant mx-auto border-primary-variant border"
       >
         Dodaj Zgłoszenie
       </Button>
