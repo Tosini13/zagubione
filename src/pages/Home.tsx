@@ -1,3 +1,4 @@
+import Reviews from "../components/Reviews";
 import HowItWorks from "../components/HowItWorks";
 import PostsDrop from "../components/PostsDrop";
 import TitleSection from "../components/TitleSection";
@@ -31,6 +32,37 @@ const LostDrops = () => {
   );
 };
 
+const reviews = [
+  {
+    name: "Karol G.",
+    content:
+      "Dzięki znalezione.pl odzyskałem swoje klucze. Szybko skontaktowałem się ze znalazcą przez czat i ustaliłem dostawę.",
+  },
+  {
+    name: "John Doe",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  },
+  {
+    name: "Jane Smith",
+    content:
+      "Nulla facilisi. Sed euismod mauris non felis aliquet, vitae luctus nunc tincidunt.",
+  },
+  {
+    name: "Karol G.",
+    content:
+      "Dzięki znalezione.pl odzyskałem swoje klucze. Szybko skontaktowałem się ze znalazcą przez czat i ustaliłem dostawę.",
+  },
+  {
+    name: "John Doe",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  },
+  {
+    name: "Jane Smith",
+    content:
+      "Nulla facilisi. Sed euismod mauris non felis aliquet, vitae luctus nunc tincidunt.",
+  },
+];
+
 type HomePropsType = {};
 
 const Home: React.FC<HomePropsType> = ({}) => {
@@ -49,6 +81,9 @@ const Home: React.FC<HomePropsType> = ({}) => {
         <div className="horizontal-layout py-16">
           <HowItWorks />
         </div>
+      </div>
+      <div className="horizontal-layout py-16">
+        <Reviews reviews={reviews} />
       </div>
     </div>
   );

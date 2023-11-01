@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import Button from "./Button";
+import { ArrowLeftIcon } from "@heroicons/react/20/solid";
+
 import { getIconSrc } from "../utils";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -38,9 +40,16 @@ export const ButtonWithIcon: Story = {
   },
 };
 
-export const ButtonIcon: Story = {
+export const ButtonIconSrc: Story = {
   args: {
     icon: getIconSrc("arrow-left.svg"),
+    children: null,
+  },
+};
+
+export const ButtonIcon: Story = {
+  args: {
+    icon: <ArrowLeftIcon className="text-black h-4 aspect-square -m-4" />,
     children: null,
   },
 };

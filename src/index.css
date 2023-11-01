@@ -56,3 +56,19 @@ select:-webkit-autofill:focus {
 .horizontal-layout{
   @apply max-w-7xl xl:mx-auto mx-2
 }
+
+/* #swiper-reviews{
+  @apply flex items-center justify-center flex-wrap
+}
+
+#swiper-reviews .swiper-button-prev{
+  @apply relative order-1 m-0 border border-black text-black rounded-full p-2 aspect-square h-10
+}
+
+#swiper-reviews .swiper-button-next{
+  @apply relative order-3 m-0
+}
+
+#swiper-reviews .swiper-pagination{
+  @apply relative order-2 mx-4 w-fit m-0
+} */
