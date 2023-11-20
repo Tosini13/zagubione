@@ -1,12 +1,11 @@
+import { EyeIcon, EyeSlashIcon } from "@heroicons/react/20/solid";
 import React, {
   InputHTMLAttributes,
   ReactElement,
-  ReactNode,
   forwardRef,
   useState,
 } from "react";
 import { twMerge } from "tailwind-merge";
-import { EyeIcon, EyeSlashIcon } from "@heroicons/react/20/solid";
 
 type BaseInputProps = InputHTMLAttributes<HTMLInputElement> & {
   icon?: string | ReactElement;

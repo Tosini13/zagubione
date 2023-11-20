@@ -24,7 +24,7 @@ const PostTile: React.FC<PostTilePropsType> = ({ post, type }) => {
     >
       <img
         src={getDBFileSrc(type, post.id, post.imgSrc[0])}
-        alt={`${post.title} image`}
+        alt={`${post.title}`}
         className="w-full aspect-square object-cover"
       />
       <div className="p-2 text-sm gap-y-1 h-full flex flex-col grow">
